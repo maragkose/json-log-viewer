@@ -55,8 +55,8 @@ function readLog(file, reader=fs) {
   const lines = _.compact(contents.split('\n').filter(line => line).map(parse));
 
   return lines.map(line => {
-    const result = _.pick(line, ['timestamp', 'level', 'message']);
-    const data = _.omit(line, ['timestamp', 'level', 'message']);
+    const result = _.pick(line, ['timestamp', 'level', 'process', 'message']);
+    const data = _.omit(line, ['timestamp', 'level', 'process', 'message']);
     return Object.assign({}, result, { data });
   });
 };
