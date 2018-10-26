@@ -8,7 +8,7 @@ const BaseWidget = require('./BaseWidget');
 const LogDetails = require('./LogDetails');
 const Picker = require('./Picker');
 
-const FIELDS = ['timestamp', 'level', 'message'];
+const FIELDS = ['timestamp', 'level', 'process', 'message'];
 
 class MainPanel extends BaseWidget {
   constructor(opts={}) {
@@ -492,6 +492,7 @@ class MainPanel extends BaseWidget {
     const columns = [
       { title: 'Timestamp', key: 'timestamp' },
       { title: 'Level', key: 'level', format: v => levelColors[v](v) },
+      { title: 'Process', key: 'process' },
       { title: 'D', key: 'data', length: 1, format: v => _.isEmpty(v) ? ' ' : '*' },
       { title: 'Message', key: 'message' },
     ];

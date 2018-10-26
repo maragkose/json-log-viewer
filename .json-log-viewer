@@ -1,0 +1,7 @@
+[transform]
+level=level
+process=process
+timestamp=time
+service=service
+message=log.msg
+output=output
